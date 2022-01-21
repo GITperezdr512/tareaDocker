@@ -64,4 +64,15 @@ docker rm 8b
 
 <h2>Servidor de base de datos</h2>
 
-Para esta segunda parte hay que descargar una imagen de `maridb`
+Para esta segunda parte hay que descargar una imagen de `mariadb`
+
+```
+docker run --name bbdd -e MARIADB_ROOT_PASSWORD=root -e MARIADB_DATABASE=prueba -e MARIADB_USER=invitado -e MARIADB_PASSWORD=invitado -p 3336:3306 -d mariadb
+```
+
+Ahora tenemos que crear la base de datos:
+
+``` 
+
+```
+
