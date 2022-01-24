@@ -16,7 +16,7 @@ Una vez lista crearemos el contenedor que correrá esta imagen:
 sudo docker run -d --name web -p 8000:80 php:7.4-apache
 ```
 
-Accedemos dinámicamente a Apache para colocar el archivo `index.html` y editarlo (una vez iniciamos la consola nos coloca en la caprte /var/www/html)
+Accedemos dinámicamente a Apache para colocar el archivo `index.html` y editarlo (una vez iniciamos la consola nos coloca en la carp /var/www/html)
 
 ```
 docker exec -it web bash 
@@ -67,12 +67,37 @@ docker rm 8b
 Para esta segunda parte hay que descargar una imagen de `mariadb`
 
 ```
-docker run --name bbdd -e MARIADB_ROOT_PASSWORD=root -e MARIADB_DATABASE=prueba -e MARIADB_USER=invitado -e MARIADB_PASSWORD=invitado -p 3336:3306 -d mariadb
+docker pull mariadb
 ```
 
 Ahora tenemos que crear la base de datos:
 
 ``` 
+docker run --name bbdd -e MARIADB_ROOT_PASSWORD=root -e MARIADB_DATABASE=prueba -e MARIADB_USER=invitado -e MARIADB_PASSWORD=invitado -p 3336:3306 -d mariadb
+```
+
+Para hacer las pruebas es necesario crear el contenedor de phpMyAdmin añadiendo el 'flag' `--link`:
 
 ```
+pull phpmyadmin
+docker run --name myadmin -d -e PMA_ARBITRARY=1--link bbdd:mariadb -p 8080:80 phpmyadmin
+```
+
+Se usa la variable PMA_ARBITRARY=1 para poder indicar el servidor al que se conectará.
+
+Tras esto nos introducimos en phpMyAdmin con nuestro usuario invitado:
+
+![Screenshot_9](Ejercicios%20-%20trabajo%20con%20im%C3%A1genes.assets/Screenshot_9.png)
+
+![Screenshot_10](Ejercicios%20-%20trabajo%20con%20im%C3%A1genes.assets/Screenshot_10.png)
+
+En la segunda imagen se puede apreciar como se ha creado correctamente la base de datos `prueba` (no ha hecho falta usar el comando `mysql show databases`).
+
+Como última tarea vemos la imposibilidad de borrar la imagen `mariadb` mientras está en ejecución:
+
+```
+docker rmi mariadb
+```
+
+![Screenshot_11](Ejercicios%20-%20trabajo%20con%20im%C3%A1genes.assets/Screenshot_11.png)
 
