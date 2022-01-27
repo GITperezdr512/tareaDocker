@@ -1,1 +1,18 @@
+La repartición de tareas se hará de la siguiente forma:
+- Merino y Claudia trabajaran juntos en las tareas 1 (inicial), 3 (almacenamiento) y 5 (DockerFile).
+- Daniel se encargará de preparar el repositorio en GitHub y de realizar las tareas 2 (imágenes) y 4 (redes).
+
+Se trabajará en el repositorio GitHub del coordinador, Daniel (https://github.com/GITperezdr512).
+Todos los cambios se irán subiendo al repositorio, con el fin de que podamos
+revisar eltrabajo global del equipo. En caso de detectar algún error se
+asignará sobre la marcha alguno de los miembros la tarea de corrección.
+
+Se prevé que durante:
+- La semana del 10 al 16 se acabe la tarea número 1 y se tenga preparado el repositorio.
+- La semana del 17 al 23 se finalicen las tareas número 2 y 3.
+- La semana del 24 al 30 se entreguen las tareas número 4 y 5.
+- La semana del 31 al 3 se revisen las tareas y se ahgan las modificaciones correspondientes.
+
+
+
 
