@@ -14,8 +14,8 @@ author: Aitor Merino Vázquez, Claudia Trabanco Conde
 1. Creación y comprobación de funcionamiento del contenedor Nginx
 
 ```bash
-sudo docker run -d --name servidor_web -p 8181:80 nginx
-sudo docker ps -a
+docker run -d --name servidor_web -p 8181:80 nginx
+docker ps -a
 ```
 
 ![MicrosoftTeams-image](Ejercicio%20inicial.assets/MicrosoftTeams-image.png)
@@ -29,7 +29,7 @@ sudo docker ps -a
 3. Imágenes del servicio local
 
 ```bash
-sudo docker images
+docker images
 ```
 
 ![MicrosoftTeams-image(3)](Ejercicio%20inicial.assets/MicrosoftTeams-image(3).png)
@@ -37,8 +37,8 @@ sudo docker images
 4. Eliminación del contenedor
 
 ```bash
-sudo docker stop servidor_web
-sudo docker rm servidor_web
+docker stop servidor_web
+docker rm servidor_web
 ```
 
 ![MicrosoftTeams-image(4)](Ejercicio%20inicial.assets/MicrosoftTeams-image(4).png)
